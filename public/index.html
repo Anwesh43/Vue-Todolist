@@ -1,0 +1,31 @@
+<body>
+  <div id="app">
+      <p>
+      {{message}}
+    </p>
+    <input type="text" v-model="message">
+    <button v-on:click ="click">Submit</button>
+    <p v-for="todo in todos">
+        {{todo}}
+    </p>
+  </div>
+    <!--
+    <script src="bundle.js">
+    </script> -->
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+      const app = new Vue({
+        el:'#app',
+        data:{
+            message:'hello world',
+            todos:[]
+        },
+        methods:{
+            click(){
+                this._data.todos.push(this._data.message)
+            }
+        }
+
+      })
+  </script>
+</body>
